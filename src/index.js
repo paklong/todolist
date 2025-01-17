@@ -1,1 +1,1 @@
-console.log('script ready!');
+console.log("script ready!");

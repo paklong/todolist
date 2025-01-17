@@ -9,6 +9,9 @@ module.exports = {
         filename: 'bundle.js',
         clean: true,
     },
+    devServer: {
+        watchFiles: ["./src/"],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
