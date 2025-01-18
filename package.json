@@ -4,7 +4,7 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "watch": "webpack --watch",
-    "publish": "git checkout gh-pages && git merge main --no-edit && git subtree push --prefix dist origin gh-pages && git checkout main",
+    "publish": "git checkout gh-pages && git merge main --no-edit && npm run build && git add dist -f && git commit -m \"Deployment commit\" && git subtree push --prefix dist origin gh-pages && git checkout main",
     "prettier": "prettier --write 'src/**/*.{html,css,js}'",
     "list": "eslint 'src/**/*.{html,css,js}",
     "test": "jest"
