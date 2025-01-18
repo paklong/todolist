@@ -131,3 +131,6 @@ dist
 
 
 dist/
+
+src/sum.js
+src/sum.test.js
