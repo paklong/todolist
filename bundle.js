@@ -1,1 +1,1 @@
-(()=>{var r={939:r=>{console.log("Include sum as well!"),r.exports=function(r,o){return r+o}}},o={};!function e(t){var n=o[t];if(void 0!==n)return n.exports;var s=o[t]={exports:{}};return r[t](s,s.exports,e),s.exports}(939),console.log("script ready!")})();
+console.log("script ready!");
