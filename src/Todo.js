@@ -1,8 +1,8 @@
 const { format } = require("date-fns");
 const IDGenerator = require("./IDGenerator");
 
-const Todo = (function () {
-  function createTodo(
+class Todo {
+  constructor(
     name,
     description = "",
     dueDate = format(
@@ -10,46 +10,17 @@ const Todo = (function () {
       "MM-dd-yyyy",
     ),
   ) {
-    let _id = IDGenerator.newTodoID();
-    let _name = name;
-    let _description = description;
-    let _dueDate = dueDate;
-    let _completed = false;
-
-    const getID = () => _id;
-
-    const getName = () => _name;
-    const setName = (newName) => {
-      _name = newName;
-    };
-    const getDescription = () => _description;
-    const setDescription = (newDescription) => {
-      _description = newDescription;
-    };
-    const getDueDate = () => _dueDate;
-    const setDueDate = (newDueDate) => {
-      _dueDate = newDueDate;
-    };
-
-    const getCompleted = () => _completed;
-    const toggleCompleted = () => {
-      _completed = !_completed;
-    };
-
-    return {
-      getID,
-      getName,
-      setName,
-      getDescription,
-      setDescription,
-      getDueDate,
-      setDueDate,
-      getCompleted,
-      toggleCompleted,
-    };
+    this.id = IDGenerator.newTodoID();
+    this.name = name;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.completed = false;
   }
 
-  return { createTodo };
-})();
+  toggleCompleted() {
+    this.completed = !this.completed;
+    return this.completed;
+  }
+}
 
 module.exports = Todo;
