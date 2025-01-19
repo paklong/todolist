@@ -1,3 +1,5 @@
+"use strict";
+
 const IDGenerator = (() => {
   let projectID = 1;
   let todoID = 1;

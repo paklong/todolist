@@ -1,16 +1,27 @@
+"use strict";
+
 const { format } = require("date-fns");
 const IDGenerator = require("./IDGenerator");
 
 class Todo {
-  constructor(
+  constructor({
     name,
     description = "",
     dueDate = format(
       new Date().setDate(new Date().getDate() + 7),
       "MM-dd-yyyy",
     ),
-  ) {
-    this.id = IDGenerator.newTodoID();
+  }) {
+    if (!name) {
+      throw new Error("Todo name is required");
+    }
+
+    Object.defineProperty(this, "id", {
+      value: IDGenerator.newTodoID(),
+      writable: false,
+      enumerable: true,
+    });
+
     this.name = name;
     this.description = description;
     this.dueDate = dueDate;

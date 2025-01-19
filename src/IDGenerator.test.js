@@ -1,3 +1,5 @@
+"use strict";
+
 const IDGenerator = require("./IDGenerator");
 
 describe("ID Generator tests", () => {
